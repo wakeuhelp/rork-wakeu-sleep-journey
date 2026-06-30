@@ -11,10 +11,11 @@ import CoreMotion
 struct WakeChallengeView: View {
     let challenge: WakeChallenge
     var isTest: Bool = false
+    @Environment(AppState.self) private var app
     @Environment(\.dismiss) private var dismiss
     @State private var completed = false
 
-    private let palette = WakePalette.palette(for: .morning)
+    private var palette: WakePalette { app.palette }
 
     var body: some View {
         ZStack {

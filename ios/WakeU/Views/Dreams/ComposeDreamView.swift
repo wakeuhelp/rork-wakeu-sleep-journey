@@ -12,7 +12,7 @@ struct ComposeDreamView: View {
     @State private var mood: DreamEntry.Mood = .neutral
     @FocusState private var focused: Bool
 
-    private let palette = WakePalette.palette(for: .night)
+    private var palette: WakePalette { app.palette }
 
     var body: some View {
         NavigationStack {

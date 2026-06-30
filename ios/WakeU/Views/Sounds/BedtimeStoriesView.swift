@@ -15,7 +15,7 @@ struct BedtimeStoriesView: View {
     @State private var isNarrating = false
 
     private let synthesizer = AVSpeechSynthesizer()
-    private let palette = WakePalette.palette(for: .night)
+    private var palette: WakePalette { app.palette }
 
     var body: some View {
         NavigationStack {

@@ -13,7 +13,7 @@ struct HearingTestView: View {
     @State private var profileName = "You"
     @State private var savedMax: Double = 8000
 
-    private let palette = WakePalette.palette(for: .night)
+    private var palette: WakePalette { app.palette }
 
     enum Phase { case intro, testing, result }
 

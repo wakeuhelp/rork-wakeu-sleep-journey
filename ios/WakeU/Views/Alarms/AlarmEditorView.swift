@@ -19,7 +19,7 @@ struct AlarmEditorView: View {
     @State private var challengeID: String
     @State private var showChallengePicker = false
 
-    private let palette = WakePalette.palette(for: .night)
+    private var palette: WakePalette { app.palette }
     private let dayNames = ["S", "M", "T", "W", "T", "F", "S"]
 
     init(alarm: WakeAlarm?) {
@@ -164,7 +164,7 @@ struct ChallengePickerView: View {
     @Binding var selected: String
     @State private var testing: WakeChallenge?
 
-    private let palette = WakePalette.palette(for: .night)
+    private var palette: WakePalette { app.palette }
 
     var body: some View {
         NavigationStack {

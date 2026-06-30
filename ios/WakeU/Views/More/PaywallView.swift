@@ -10,7 +10,7 @@ struct PaywallView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var selectedPlan = 1
 
-    private let palette = WakePalette.palette(for: .night)
+    private var palette: WakePalette { app.palette }
     private let features: [(String, String)] = [
         ("waveform", "Unlimited sounds & exclusive packs"),
         ("brain.head.profile", "AI Sleep Coach & deep analytics"),
