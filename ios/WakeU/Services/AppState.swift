@@ -40,7 +40,9 @@ final class AppState {
     var desiredWakeMinute: Int = 0
     var desiredSleepHours: Double = 8.0
 
-    var palette: WakePalette { .palette(for: timeOfDay) }
+    // wakeU stays in its calming dark theme at all times, regardless of the
+    // hour. Time-of-day still drives greetings and home layout, just not colour.
+    var palette: WakePalette { .palette(for: .night) }
 
     init() {
         let cal = Calendar.current
